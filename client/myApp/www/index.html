@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Moonshot home assignment</h1>
+      </ion-header-bar>
+      <ion-content>
+	 
+		  
+	  
+	  <div ng-controller="QuestionController">
+		<ul>
+			<li ng-repeat="question in questionsSrc track by $index"><a ng-click="onQuestionItemClicked(question.id)" href="javascript:void(0)">{{question.id}}: {{question.title}} - {{question.description}}</a></li>
+		</ul>
+		 <div>
+		<form>
+			<h1>Question Details</h1>
+			<br />
+			<label>Id:</label><input ng-model="selectedQuestionDetails.id" />
+			<br />
+			<label>Title:</label><input ng-model="selectedQuestionDetails.title" />
+			<br />
+			<label>Description:</label><input ng-model="selectedQuestionDetails.description" />
+			<br />
+			<label>Author name:</label><input ng-model="selectedQuestionDetails.authorName" />
+		</form>
+	  <div>
+	  </div>
+	 
+      </ion-content>
+    </ion-pane>
+	
+	
+  </body>
+</html>
